@@ -1,0 +1,13 @@
+# liboqs harness input = uint32 random_seed (LE) || uint32 algorithm_index (LE) || payload.
+# Tokens steer the algorithm selector (low indices, mod algorithm count) and vary the RNG seed.
+alg_idx_0="\x00\x00\x00\x00"
+alg_idx_1="\x01\x00\x00\x00"
+alg_idx_2="\x02\x00\x00\x00"
+alg_idx_3="\x03\x00\x00\x00"
+alg_idx_4="\x04\x00\x00\x00"
+alg_idx_8="\x08\x00\x00\x00"
+alg_idx_16="\x10\x00\x00\x00"
+seed_zero="\x00\x00\x00\x00"
+seed_ones="\xff\xff\xff\xff"
+header_00="\x00\x00\x00\x00\x00\x00\x00\x00"
+header_01="\x00\x00\x00\x00\x01\x00\x00\x00"

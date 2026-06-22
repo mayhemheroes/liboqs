@@ -1,0 +1,8 @@
+project: liboqs
+target: fuzz_test_sig_stfl_lms
+testsuite:
+  - file:///mayhem/mayhem/testsuite/fuzz_test_sig_stfl_lms
+cmds:
+  - cmd: /mayhem/fuzz_test_sig_stfl_lms
+    libfuzzer: true
+    dictionary: /mayhem/mayhem/fuzz_test_sig_stfl_lms.dict

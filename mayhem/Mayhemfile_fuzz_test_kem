@@ -1,0 +1,13 @@
+project: liboqs
+target: fuzz_test_kem
+testsuite:
+  - file:///mayhem/mayhem/testsuite/fuzz_test_kem
+cmds:
+  - cmd: /mayhem/fuzz_test_kem
+    libfuzzer: true
+    # The harness picks an algorithm by (index % OQS_KEM_algs_length), so any input can land on a
+    # heavy Classic McEliece parameter set whose keypair takes several seconds. Without a generous
+    # per-testcase timeout Mayhem aborts those inputs during calibration and records 0 edges, even
+    # though the harness instruments and covers liboqs locally (cov grows 331 -> 3600+ on the seeds).
+    timeout: 120
+    dictionary: /mayhem/mayhem/fuzz_test_kem.dict
